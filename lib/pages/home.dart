@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -7,6 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      backgroundColor: Color(0xFFE5E5E5),
       body: Center(
         child: Column(
           children: [
@@ -49,6 +52,119 @@ class Home extends StatelessWidget {
                     'view all',
                     style: TextStyle(color: const Color(0xffb74093)),
                   )
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 24),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                        decoration: BoxDecoration(
+                            color: Color(0xFFFF6E4E),
+                            borderRadius: BorderRadius.circular(100),
+                            border: Border.all(width: 1, color: Colors.black)),
+                        child: Icon(
+                          Icons.mobile_screen_share_outlined,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 7),
+                        child: Text(
+                          "Phone",
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                        decoration: BoxDecoration(
+                            color: Color(0xFFFF6E4E),
+                            borderRadius: BorderRadius.circular(100),
+                            border: Border.all(width: 1, color: Colors.black)),
+                        child: Icon(
+                          Icons.computer_outlined,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 7),
+                        child: Text(
+                          "Computer",
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                        decoration: BoxDecoration(
+                            color: Color(0xFFFF6E4E),
+                            borderRadius: BorderRadius.circular(100),
+                            border: Border.all(width: 1, color: Colors.black)),
+                        child: Icon(
+                          Icons.health_and_safety_outlined,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 7),
+                        child: Text(
+                          "Health",
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                        decoration: BoxDecoration(
+                            color: Color(0xFFFF6E4E),
+                            borderRadius: BorderRadius.circular(100),
+                            border: Border.all(width: 1, color: Colors.black)),
+                        child: Icon(
+                          Icons.book_online,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 7),
+                        child: Text(
+                          "Books",
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                      )
+                    ],
+                  ),
                 ],
               ),
             )
