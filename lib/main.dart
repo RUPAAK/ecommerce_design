@@ -5,5 +5,6 @@ void main() {
   runApp(MaterialApp(
     initialRoute: "/home",
     routes: {"/home": (context) => Home()},
+    debugShowCheckedModeBanner: false,
   ));
 }
