@@ -177,24 +177,24 @@ class Home extends StatelessWidget {
                     Expanded(
                         // flex: 5,
                         child: Container(
-                          height: 42.0,
-                          width: 3000,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              labelText: 'Search...',
-                              prefixIcon: Align(
-                                widthFactor: 1.0,
-                                heightFactor: 1.0,
-                                child: Icon(
-                                  Icons.search_outlined,
-                                  color: Color(0xFFFF6E4E),
-                                ),
-                              ),
+                      height: 42.0,
+                      width: 3000,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          labelText: 'Search...',
+                          prefixIcon: Align(
+                            widthFactor: 1.0,
+                            heightFactor: 1.0,
+                            child: Icon(
+                              Icons.search_outlined,
+                              color: Color(0xFFFF6E4E),
                             ),
                           ),
-                        )),
+                        ),
+                      ),
+                    )),
                     Expanded(
                       flex: 0,
                       child: Container(
@@ -213,7 +213,35 @@ class Home extends StatelessWidget {
                       ),
                     ),
                   ],
-                ))
+                )),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Hot sales',
+                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
+                  ),
+                  Text(
+                    'see more',
+                    style: TextStyle(color: const Color(0xffb74093)),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15.50),
+                child: Image(
+                  image: AssetImage('assets/images/iphone.jpg'),
+                ),
+              ),
+            ),
           ],
         ),
       ),
