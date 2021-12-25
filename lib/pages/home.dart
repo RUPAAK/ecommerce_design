@@ -64,8 +64,8 @@ class Home extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: 70,
-                        width: 70,
+                        height: 60,
+                        width: 60,
                         // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
                         decoration: BoxDecoration(
                             color: Color(0xFFFF6E4E),
@@ -73,7 +73,7 @@ class Home extends StatelessWidget {
                             border: Border.all(width: 1, color: Colors.black)),
                         child: Icon(
                           Icons.mobile_screen_share_outlined,
-                          size: 35,
+                          size: 30,
                           color: Colors.white,
                         ),
                       ),
@@ -90,8 +90,8 @@ class Home extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: 70,
-                        width: 70,
+                        height: 60,
+                        width: 60,
                         // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
                         decoration: BoxDecoration(
                             color: Color(0xFFFF6E4E),
@@ -99,7 +99,7 @@ class Home extends StatelessWidget {
                             border: Border.all(width: 1, color: Colors.black)),
                         child: Icon(
                           Icons.computer_outlined,
-                          size: 35,
+                          size: 30,
                           color: Colors.white,
                         ),
                       ),
@@ -116,8 +116,8 @@ class Home extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: 70,
-                        width: 70,
+                        height: 60,
+                        width: 60,
                         // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
                         decoration: BoxDecoration(
                             color: Color(0xFFFF6E4E),
@@ -125,7 +125,7 @@ class Home extends StatelessWidget {
                             border: Border.all(width: 1, color: Colors.black)),
                         child: Icon(
                           Icons.health_and_safety_outlined,
-                          size: 35,
+                          size: 30,
                           color: Colors.white,
                         ),
                       ),
@@ -142,8 +142,8 @@ class Home extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: 70,
-                        width: 70,
+                        height: 60,
+                        width: 60,
                         // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
                         decoration: BoxDecoration(
                             color: Color(0xFFFF6E4E),
@@ -151,7 +151,7 @@ class Home extends StatelessWidget {
                             border: Border.all(width: 1, color: Colors.black)),
                         child: Icon(
                           Icons.book_online,
-                          size: 35,
+                          size: 30,
                           color: Colors.white,
                         ),
                       ),
@@ -167,7 +167,53 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                        // flex: 5,
+                        child: Container(
+                          height: 42.0,
+                          width: 3000,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              labelText: 'Search...',
+                              prefixIcon: Align(
+                                widthFactor: 1.0,
+                                heightFactor: 1.0,
+                                child: Icon(
+                                  Icons.search_outlined,
+                                  color: Color(0xFFFF6E4E),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )),
+                    Expanded(
+                      flex: 0,
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFF6E4E),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: Icon(
+                          Icons.menu,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
       ),
