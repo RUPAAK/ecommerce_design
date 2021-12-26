@@ -238,7 +238,7 @@ class Home extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15.50),
                 child: Image(
-                  image: AssetImage('assets/images/iphone.jpg'),
+                  image: AssetImage('assets/images/iphone.png'),
                 ),
               ),
             ),
