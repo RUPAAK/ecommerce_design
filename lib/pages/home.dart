@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
         child: Scaffold(
       backgroundColor: Color(0xFFE5E5E5),
       body: Center(
-        child: Column(children: [
+        child: ListView(children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -316,7 +316,7 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ]),
       ),
     ));
