@@ -220,7 +220,7 @@ class Home extends StatelessWidget {
               children: [
                 Text(
                   'Hot sales',
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
                 ),
                 Text(
                   'see more',
@@ -232,73 +232,89 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
-            width: 378,
-            height: 183,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
-                image: AssetImage('assets/images/iphone.png'),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.25), BlendMode.darken),
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Color(0xFFFF6E4E),
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(40),
-                    ),
-                  ),
-                  child: Text(
-                    'New',
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.white,
-                        decoration: TextDecoration.underline),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 17.0),
+            child: FractionallySizedBox(
+              widthFactor: 1,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
+                height: 183,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/iphone.png'),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.25), BlendMode.darken),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  child: Text(
-                    'IPhone 12',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      child: RaisedButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Buy Now !',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          )),
+                      height: 27,
+                      width: 27,
+                      margin: EdgeInsets.only(bottom: 17),
+                      alignment: Alignment.center,
+                      // margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      decoration: BoxDecoration(
+                          color: Color(0xFFFF6E4E),
+                          borderRadius: BorderRadius.circular(100),
+                          border: Border.all(width: 1, color: Colors.black)),
+                      child: Text(
+                        'New',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'IPhone 12',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'Súper. Mega. Rápido.',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 20),
+                          width: 98,
+                          height: 23,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFFF6E4E),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                              ),
+                              child: Text(
+                                'Buy Now !',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              )),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
           )
         ]),
