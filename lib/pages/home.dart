@@ -296,7 +296,7 @@ class Home extends StatelessWidget {
                           height: 23,
                           decoration: BoxDecoration(
                             color: Color(0xFFFF6E4E),
-                            borderRadius: BorderRadius.circular(5),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           child: ElevatedButton(
                               onPressed: () {},
@@ -317,11 +317,8 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 17),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -336,70 +333,184 @@ class Home extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 15,
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
-              child: Row(
-                children: [
-                  Image(
-                    image: AssetImage('assets/images/s_series.png'),
-                    height: 168,
-                    width: 187,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.all(1),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Image(
-                              image: AssetImage('assets/images/mi.png'),
-                              height: 168,
-                              width: 187,
-                            ),
-                          ),
-                        ],
+          Padding(
+            padding: const EdgeInsets.fromLTRB(17, 0, 17, 15),
+            child: GridView.count(
+              shrinkWrap: true,
+              childAspectRatio: 0.9,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: [
+                Container(
+                  clipBehavior: Clip.hardEdge,
+
+                  // color: Colors.white,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white),
+                  // height: 500,
+                  child: Column(
+                    children: [
+                      Container(
+                        // height: 300,
+                        child: Image(
+                          image: AssetImage('assets/images/s_series.png'),
+                          fit: BoxFit.cover,
+                          // height: 250,
+                        ),
                       ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
-              child: Row(
-                children: [
-                  Image(
-                    image: AssetImage('assets/images/note_series.png'),
-                    height: 168,
-                    width: 187,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Image(
-                              image: AssetImage('assets/images/m.png'),
-                              height: 168,
-                              width: 187,
-                            ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '\$14,07',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 16),
                           ),
-                        ],
+                        ),
                       ),
-                    ),
+                      Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Samsung Galaxy s20 Ultra',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 10),
+                            ),
+                          )),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  clipBehavior: Clip.hardEdge,
+
+                  // color: Colors.white,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white),
+                  // height: 500,
+                  child: Column(
+                    children: [
+                      Container(
+                        // height: 300,
+                        child: Image(
+                          image: AssetImage('assets/images/mi.png'),
+                          fit: BoxFit.cover,
+                          // height: 250,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '\$507',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 16),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Xiaomi Mi 10 Pro',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 10),
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+                Container(
+                  clipBehavior: Clip.hardEdge,
+
+                  // color: Colors.white,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white),
+                  // height: 500,
+                  child: Column(
+                    children: [
+                      Container(
+                        // height: 300,
+                        child: Image(
+                          image: AssetImage('assets/images/note_series.png'),
+                          fit: BoxFit.cover,
+                          // height: 250,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '\$14,07',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 16),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Samsung Note 20 Ultra',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 10),
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+                Container(
+                  clipBehavior: Clip.hardEdge,
+
+                  // color: Colors.white,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white),
+                  // height: 500,
+                  child: Column(
+                    children: [
+                      Container(
+                        // height: 300,
+                        child: Image(
+                          image: AssetImage('assets/images/m.png'),
+                          fit: BoxFit.cover,
+                          // height: 250,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '\$300',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 16),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Motorola One Edge',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 10),
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ]),
