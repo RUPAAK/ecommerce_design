@@ -317,6 +317,91 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Best Seller',
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
+                ),
+                Text(
+                  'see more',
+                  style: TextStyle(color: const Color(0xffb74093)),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
+              child: Row(
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/s_series.png'),
+                    height: 168,
+                    width: 187,
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.all(1),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Image(
+                              image: AssetImage('assets/images/mi.png'),
+                              height: 168,
+                              width: 187,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
+              child: Row(
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/note_series.png'),
+                    height: 168,
+                    width: 187,
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Image(
+                              image: AssetImage('assets/images/m.png'),
+                              height: 168,
+                              width: 187,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ]),
       ),
     ));
