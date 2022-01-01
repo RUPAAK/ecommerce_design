@@ -1,14 +1,29 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecommerce_design/data/best_seller.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
+
+  List<BestSeller> bestSellersData = [
+    BestSeller(
+        name: "Samsung Galaxy s20 Ultra",
+        image: "assets/images/s_series.png",
+        cost: "\$1,047"),
+    BestSeller(
+        name: "Xiaomi Mi 10 Pro", image: "assets/images/mi.png", cost: "\$300"),
+    BestSeller(
+        name: "Samsung Note 20 Ultra",
+        image: "assets/images/note_series.png",
+        cost: "\$1,000"),
+    BestSeller(
+        name: "Motorola One Edge", image: "assets/images/m.png", cost: "\$750"),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: Color(0xFFE5E5E5),
       body: Center(
         child: ListView(children: [
@@ -338,183 +353,80 @@ class Home extends StatelessWidget {
             child: GridView.count(
               shrinkWrap: true,
               childAspectRatio: 0.9,
+              primary: false,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 2,
-              children: [
-                Container(
-                  clipBehavior: Clip.hardEdge,
+              children: bestSellersData
+                  .map(
+                    (data) => Container(
+                      clipBehavior: Clip.hardEdge,
 
-                  // color: Colors.white,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  // height: 500,
-                  child: Column(
-                    children: [
-                      Container(
-                        // height: 300,
-                        child: Image(
-                          image: AssetImage('assets/images/s_series.png'),
-                          fit: BoxFit.cover,
-                          // height: 250,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            '\$14,07',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 16),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'Samsung Galaxy s20 Ultra',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 10),
+                      // color: Colors.white,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white),
+                      // height: 500,
+                      child: Column(
+                        children: [
+                          Container(
+                            // height: 300,
+                            child: Image(
+                              image: AssetImage(data.image),
+                              fit: BoxFit.cover,
+                              // height: 250,
                             ),
-                          )),
-                    ],
-                  ),
-                ),
-                Container(
-                  clipBehavior: Clip.hardEdge,
-
-                  // color: Colors.white,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  // height: 500,
-                  child: Column(
-                    children: [
-                      Container(
-                        // height: 300,
-                        child: Image(
-                          image: AssetImage('assets/images/mi.png'),
-                          fit: BoxFit.cover,
-                          // height: 250,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            '\$507',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 16),
                           ),
-                        ),
-                      ),
-                      Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'Xiaomi Mi 10 Pro',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 10),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                data.cost,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700, fontSize: 16),
+                              ),
                             ),
-                          )),
-                    ],
-                  ),
-                ),
-                Container(
-                  clipBehavior: Clip.hardEdge,
-
-                  // color: Colors.white,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  // height: 500,
-                  child: Column(
-                    children: [
-                      Container(
-                        // height: 300,
-                        child: Image(
-                          image: AssetImage('assets/images/note_series.png'),
-                          fit: BoxFit.cover,
-                          // height: 250,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            '\$14,07',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 16),
                           ),
-                        ),
+                          Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  data.name,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 10),
+                                ),
+                              )),
+                        ],
                       ),
-                      Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'Samsung Note 20 Ultra',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 10),
-                            ),
-                          )),
-                    ],
-                  ),
-                ),
-                Container(
-                  clipBehavior: Clip.hardEdge,
-
-                  // color: Colors.white,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  // height: 500,
-                  child: Column(
-                    children: [
-                      Container(
-                        // height: 300,
-                        child: Image(
-                          image: AssetImage('assets/images/m.png'),
-                          fit: BoxFit.cover,
-                          // height: 250,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            '\$300',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 16),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'Motorola One Edge',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 10),
-                            ),
-                          )),
-                    ],
-                  ),
-                ),
-              ],
+                    ),
+                  )
+                  .toList(),
             ),
           ),
         ]),
       ),
-    ));
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        // currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        // onTap: _onItemTapped,
+      ),
+    );
   }
 }
