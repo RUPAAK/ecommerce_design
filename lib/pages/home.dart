@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
-
+  int _currentIndex = 0;
   List<BestSeller> bestSellersData = [
     BestSeller(
         name: "Samsung Galaxy s20 Ultra",
@@ -418,24 +418,24 @@ class Home extends StatelessWidget {
             bottomRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
+            currentIndex: 0,
             backgroundColor: Color(0x010035),
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.shop),
-                label: 'Shop',
+                label: '',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.favorite),
-                label: 'Favorite',
+                label: '',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                label: 'Person',
+                label: '',
               ),
             ],
-            // currentIndex: _selectedIndex,
-            selectedItemColor: Colors.amber[800],
-            // onTap: _onItemTapped,
+            selectedItemColor: Colors.white,
+            // onTap:
           ),
         ));
   }
