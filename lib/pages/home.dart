@@ -453,16 +453,15 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(),
         bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
-            bottomLeft: Radius.circular(30.0),
-            bottomRight: Radius.circular(30.0),
-          ),
-          child: BottomNavigationBar(
-              currentIndex: 0,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30.0),
+              topRight: Radius.circular(30.0),
+              bottomLeft: Radius.circular(30.0),
+              bottomRight: Radius.circular(30.0),
+            ),
+            child: BottomNavigationBar(
+              iconSize: 10,
               backgroundColor: Color(0x010035),
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
@@ -479,11 +478,8 @@ class _NavBarState extends State<NavBar> {
                 ),
               ],
               selectedItemColor: Colors.white,
-              onTap: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              }),
-        ));
+              currentIndex: _currentIndex,
+              onTap: (index) => setState(() => _currentIndex = index),
+            )));
   }
 }
