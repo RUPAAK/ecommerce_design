@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:ecommerce_design/data/best_seller.dart';
+import 'package:ecommerce_design/pages/nav.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -411,75 +412,29 @@ class Home extends StatelessWidget {
           ]),
         ),
         bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
-            bottomLeft: Radius.circular(30.0),
-            bottomRight: Radius.circular(30.0),
-          ),
-          child: BottomNavigationBar(
-            currentIndex: 0,
-            backgroundColor: Color(0x010035),
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.shop),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.favorite),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: '',
-              ),
-            ],
-            selectedItemColor: Colors.white,
-            // onTap:
-          ),
+          borderRadius: BorderRadius.circular(30),
+          child: Navbar(),
+          // child: BottomNavigationBar(
+          //   currentIndex: 0,
+          //   backgroundColor: Color(0x010035),
+          //   items: const <BottomNavigationBarItem>[
+          //     BottomNavigationBarItem(
+          //       icon: Icon(Icons.shop),
+          //       label: '',
+          //     ),
+          //     BottomNavigationBarItem(
+          //       icon: Icon(Icons.favorite),
+          //       label: '',
+          //     ),
+          //     BottomNavigationBarItem(
+          //       icon: Icon(Icons.person),
+          //       label: '',
+          //     ),
+          //   ],
+          //   selectedItemColor: Colors.white,
+          //   // onTap:
+          // ),
         ));
   }
 }
 
-class NavBar extends StatefulWidget {
-  const NavBar({Key? key}) : super(key: key);
-
-  @override
-  _NavBarState createState() => _NavBarState();
-}
-
-class _NavBarState extends State<NavBar> {
-  int _currentIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        bottomNavigationBar: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30.0),
-              topRight: Radius.circular(30.0),
-              bottomLeft: Radius.circular(30.0),
-              bottomRight: Radius.circular(30.0),
-            ),
-            child: BottomNavigationBar(
-              iconSize: 10,
-              backgroundColor: Color(0x010035),
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shop),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: '',
-                ),
-              ],
-              selectedItemColor: Colors.white,
-              currentIndex: _currentIndex,
-              onTap: (index) => setState(() => _currentIndex = index),
-            )));
-  }
-}
