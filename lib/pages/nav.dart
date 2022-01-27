@@ -62,7 +62,6 @@ class Navbar extends StatelessWidget {
         selectedItemColor: Colors.white,
         // onTap:
       ),
-    
     );
   }
 }

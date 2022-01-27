@@ -2,6 +2,7 @@
 
 import 'package:ecommerce_design/data/best_seller.dart';
 import 'package:ecommerce_design/pages/nav.dart';
+import 'package:ecommerce_design/pages/filter.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -48,6 +49,29 @@ class Home extends StatelessWidget {
                             Text('Balaju, Nepal',
                                 style: TextStyle(
                                     color: Colors.black87, fontSize: 15)),
+                          ],
+                        ),
+                      ],
+                    )),
+                Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 12, 0, 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Wrap(
+                          spacing: 18,
+                          crossAxisAlignment: WrapCrossAlignment.end,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                Filter();
+                              },
+                              icon: Icon(
+                                Icons.filter,
+                                size: 15,
+                                color: const Color(0xffb74093),
+                              ),
+                            )
                           ],
                         ),
                       ],
@@ -414,27 +438,6 @@ class Home extends StatelessWidget {
         bottomNavigationBar: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: Navbar(),
-          // child: BottomNavigationBar(
-          //   currentIndex: 0,
-          //   backgroundColor: Color(0x010035),
-          //   items: const <BottomNavigationBarItem>[
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.shop),
-          //       label: '',
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.favorite),
-          //       label: '',
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.person),
-          //       label: '',
-          //     ),
-          //   ],
-          //   selectedItemColor: Colors.white,
-          //   // onTap:
-          // ),
         ));
   }
 }
-
