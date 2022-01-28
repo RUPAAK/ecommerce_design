@@ -5,6 +5,72 @@ import 'package:ecommerce_design/ui/nav.dart';
 import 'package:ecommerce_design/pages/filter.dart';
 import 'package:flutter/material.dart';
 
+class SlideSheet extends StatefulWidget {
+  const SlideSheet({Key? key}) : super(key: key);
+
+  @override
+  _SlideSheetState createState() => _SlideSheetState();
+}
+
+class _SlideSheetState extends State<SlideSheet> {
+  void slideSheet() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+              height: 375,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xFF010035),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.cancel_presentation,
+                              color: Colors.white,
+                            ),
+                            onPressed: slideSheet,
+                          ),
+                        ),
+                        Text(
+                          'Filter options',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                              letterSpacing: 1),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xFFFF6E4E),
+                          ),
+                          onPressed: () {},
+                          child: Text('Done'),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ));
+        });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: IconButton(
+        icon: const Icon(Icons.filter_alt_outlined),
+        onPressed: slideSheet,
+      ),
+    );
+  }
+}
+
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
   int _currentIndex = 0;
@@ -31,6 +97,7 @@ class Home extends StatelessWidget {
           child: ListView(children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                     padding: const EdgeInsets.fromLTRB(0, 12, 0, 20),
@@ -49,29 +116,7 @@ class Home extends StatelessWidget {
                             Text('Balaju, Nepal',
                                 style: TextStyle(
                                     color: Colors.black87, fontSize: 15)),
-                          ],
-                        ),
-                      ],
-                    )),
-                Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 12, 0, 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Wrap(
-                          spacing: 18,
-                          crossAxisAlignment: WrapCrossAlignment.end,
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                Filter();
-                              },
-                              icon: Icon(
-                                Icons.filter,
-                                size: 15,
-                                color: const Color(0xffb74093),
-                              ),
-                            )
+                            Positioned(child: const SlideSheet())
                           ],
                         ),
                       ],

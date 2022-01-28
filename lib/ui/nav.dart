@@ -6,13 +6,13 @@ class Navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 72,
+      height: 50,
       decoration: BoxDecoration(
         color: Color(0xFF010035),
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
+        // borderRadius: const BorderRadius.only(
+        //   // topLeft: Radius.circular(30),
+        //   // topRight: Radius.circular(30),
+        // ),
       ),
       child: Container(
         color: Color(0xFF010035),
