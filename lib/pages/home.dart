@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:ecommerce_design/data/best_seller.dart';
-import 'package:ecommerce_design/pages/nav.dart';
+import 'package:ecommerce_design/ui/nav.dart';
 import 'package:ecommerce_design/pages/filter.dart';
 import 'package:flutter/material.dart';
 
