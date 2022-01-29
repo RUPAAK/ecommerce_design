@@ -13,6 +13,9 @@ class SlideSheet extends StatefulWidget {
 }
 
 class _SlideSheetState extends State<SlideSheet> {
+  String? valueChoose;
+  List listItem = ["Item 1", "Item 2", "Item 3", "Item 4"];
+
   void slideSheet() {
     showModalBottomSheet(
         context: context,
@@ -53,7 +56,128 @@ class _SlideSheetState extends State<SlideSheet> {
                           child: Text('Done'),
                         )
                       ],
-                    )
+                    ),
+                    SizedBox(height: 15),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Brand',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 20),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        padding: EdgeInsets.only(left: 16, right: 16),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey, width: 1),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: DropdownButton(
+                          hint: Text("Select Items:"),
+                          dropdownColor: Colors.white,
+                          icon: Icon(Icons.arrow_drop_down),
+                          iconSize: 25,
+                          isExpanded: true,
+                          underline: SizedBox(),
+                          style: TextStyle(color: Colors.black, fontSize: 22),
+                          value: valueChoose,
+                          onChanged: (value) =>
+                              setState(() => valueChoose = valueChoose),
+                          items: listItem.map((valueItem) {
+                            return DropdownMenuItem(
+                              value: valueItem,
+                              child: Text(valueItem),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Price',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 20),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        padding: EdgeInsets.only(left: 16, right: 16),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey, width: 1),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: DropdownButton(
+                          hint: Text("Select Items:"),
+                          dropdownColor: Colors.white,
+                          icon: Icon(Icons.arrow_drop_down),
+                          iconSize: 25,
+                          isExpanded: true,
+                          underline: SizedBox(),
+                          style: TextStyle(color: Colors.black, fontSize: 10),
+                          value: valueChoose,
+                          onChanged: (value) =>
+                              setState(() => valueChoose = valueChoose),
+                          items: listItem.map((valueItem) {
+                            return DropdownMenuItem(
+                              value: valueItem,
+                              child: Text(valueItem),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Size',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 10),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        padding: EdgeInsets.only(left: 16, right: 16),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey, width: 1),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: DropdownButton(
+                          hint: Text("Select Items:"),
+                          dropdownColor: Colors.white,
+                          icon: Icon(Icons.arrow_drop_down),
+                          iconSize: 25,
+                          isExpanded: true,
+                          underline: SizedBox(),
+                          style: TextStyle(color: Colors.black, fontSize: 10),
+                          value: valueChoose,
+                          onChanged: (value) =>
+                              setState(() => valueChoose = valueChoose),
+                          items: listItem.map((valueItem) {
+                            return DropdownMenuItem(
+                              value: valueItem,
+                              child: Text(valueItem),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ));
