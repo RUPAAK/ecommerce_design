@@ -2,7 +2,6 @@
 
 import 'package:ecommerce_design/data/best_seller.dart';
 import 'package:ecommerce_design/ui/nav.dart';
-import 'package:ecommerce_design/pages/filter.dart';
 import 'package:flutter/material.dart';
 
 class SlideSheet extends StatefulWidget {
@@ -27,7 +26,7 @@ class _SlideSheetState extends State<SlideSheet> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.fromLTRB(20, 10, 20, 40),
+                      padding: EdgeInsets.fromLTRB(10, 10, 10, 40),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -60,6 +59,7 @@ class _SlideSheetState extends State<SlideSheet> {
                         ],
                       ),
                     ),
+                   
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Align(
@@ -76,6 +76,7 @@ class _SlideSheetState extends State<SlideSheet> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
+                        height: 37,
                         padding: EdgeInsets.only(left: 16, right: 16),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey, width: 1),
@@ -101,12 +102,15 @@ class _SlideSheetState extends State<SlideSheet> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          'Brand',
+                          'Price',
                           style: TextStyle(
                               fontFamily: 'open-sans',
                               fontWeight: FontWeight.w500,
@@ -117,6 +121,7 @@ class _SlideSheetState extends State<SlideSheet> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
+                        height: 37,
                         padding: EdgeInsets.only(left: 16, right: 16),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey, width: 1),
@@ -142,12 +147,15 @@ class _SlideSheetState extends State<SlideSheet> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          'Brand',
+                          'Size',
                           style: TextStyle(
                               fontFamily: 'open-sans',
                               fontWeight: FontWeight.w500,
@@ -158,6 +166,7 @@ class _SlideSheetState extends State<SlideSheet> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
+                        height: 37,
                         padding: EdgeInsets.only(left: 16, right: 16),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey, width: 1),
@@ -191,11 +200,9 @@ class _SlideSheetState extends State<SlideSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: IconButton(
-        icon: const Icon(Icons.filter_alt_outlined),
-        onPressed: slideSheet,
-      ),
+    return IconButton(
+      icon: const Icon(Icons.filter_alt_outlined),
+      onPressed: slideSheet,
     );
   }
 }
@@ -252,6 +259,7 @@ class Home extends StatelessWidget {
                     )),
               ],
             ),
+           
             Padding(
               padding: const EdgeInsets.fromLTRB(17, 0, 17, 0),
               child: Row(
@@ -418,10 +426,15 @@ class Home extends StatelessWidget {
                           color: Color(0xFFFF6E4E),
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        child: Icon(
-                          Icons.menu,
-                          size: 20,
-                          color: Colors.white,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/productDetail');
+                          },
+                          icon: Icon(
+                            Icons.menu,
+                            size: 20,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
