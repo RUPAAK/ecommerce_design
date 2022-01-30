@@ -21,51 +21,55 @@ class _SlideSheetState extends State<SlideSheet> {
         context: context,
         builder: (context) {
           return Container(
-              height: 375,
+              constraints: BoxConstraints(minHeight: double.infinity),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Color(0xFF010035),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.cancel_presentation,
-                              color: Colors.white,
-                            ),
-                            onPressed: slideSheet,
-                          ),
-                        ),
-                        Text(
-                          'Filter options',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18,
-                              letterSpacing: 1),
-                        ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFFF6E4E),
-                          ),
-                          onPressed: () {},
-                          child: Text('Done'),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 15),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.fromLTRB(20, 10, 20, 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Color(0xFF010035),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.cancel_presentation,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
+                            ),
+                          ),
+                          Text(
+                            'Filter options',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18,
+                                letterSpacing: 1),
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xFFFF6E4E),
+                            ),
+                            onPressed: () {},
+                            child: Text('Done'),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
                           'Brand',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 20),
+                              fontFamily: 'open-sans',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18),
                         ),
                       ),
                     ),
@@ -97,17 +101,16 @@ class _SlideSheetState extends State<SlideSheet> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          'Price',
+                          'Brand',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 20),
+                              fontFamily: 'open-sans',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18),
                         ),
                       ),
                     ),
@@ -126,7 +129,7 @@ class _SlideSheetState extends State<SlideSheet> {
                           iconSize: 25,
                           isExpanded: true,
                           underline: SizedBox(),
-                          style: TextStyle(color: Colors.black, fontSize: 10),
+                          style: TextStyle(color: Colors.black, fontSize: 22),
                           value: valueChoose,
                           onChanged: (value) =>
                               setState(() => valueChoose = valueChoose),
@@ -140,13 +143,15 @@ class _SlideSheetState extends State<SlideSheet> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          'Size',
+                          'Brand',
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 10),
+                              fontFamily: 'open-sans',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18),
                         ),
                       ),
                     ),
@@ -165,7 +170,7 @@ class _SlideSheetState extends State<SlideSheet> {
                           iconSize: 25,
                           isExpanded: true,
                           underline: SizedBox(),
-                          style: TextStyle(color: Colors.black, fontSize: 10),
+                          style: TextStyle(color: Colors.black, fontSize: 22),
                           value: valueChoose,
                           onChanged: (value) =>
                               setState(() => valueChoose = valueChoose),
@@ -390,7 +395,7 @@ class Home extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(5)),
                           labelText: 'Search...',
                           prefixIcon: Align(
                             widthFactor: 1.0,
@@ -506,7 +511,7 @@ class Home extends StatelessWidget {
                             height: 23,
                             decoration: BoxDecoration(
                               color: Color(0xFFFF6E4E),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: ElevatedButton(
                                 onPressed: () {},
@@ -559,7 +564,7 @@ class Home extends StatelessWidget {
 
                         // color: Colors.white,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(5),
                             color: Colors.white),
                         // height: 500,
                         child: Column(
