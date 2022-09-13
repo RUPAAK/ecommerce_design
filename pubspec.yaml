@@ -30,12 +30,27 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_launcher_icons: "^0.10.0"
+  
 
 dev_dependencies:
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/ecommerce.jpg"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/ecommerce.jpg"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/ecommerce.jpg"
+    icon_size: 48 # min:48, max:256, default: 48
   flutter_test:
     sdk: flutter
 
@@ -59,8 +74,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/iphone.jpg
-    # - images/a_dot_ham.jpeg
+    - assets/images/iphone.png
+    - assets/images/m.png
+    - assets/images/mi.png
+    - assets/images/note_series.png
+    - assets/images/s_series.png
+    - assets/images/ecommerce.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
